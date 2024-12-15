@@ -48,7 +48,7 @@ To ensure smooth processing, follow these guidelines:
 st.markdown("""          
 Example feature table:  
  
-|feature|sample1.mzML|sample2.mzML|blank.mzML|
+|feature_ID|sample1.mzML|sample2.mzML|blank.mzML|
 |---|---|---|---|
 |1|1000|1100|100|
 |2|2000|2200|200|
@@ -65,48 +65,6 @@ Example meta data table:
 |sample2.mzML|Sample|2h|
 |blank.mzML|Blank|N/A| 
 """)
-
-# Define the data
-data = {
-    "File Type": [
-        "Feature Quantification Table",
-        "Metadata",
-        "Edge File",
-        "Annotation Files",
-        "Annotation Files"
-    ],
-    "Folder Location": [
-        "`quantification_table` folder",
-        "`metadata_table` folder",
-        "`networking_pairs_results_file_filtered` folder",
-        "`DB_result` folder",
-        "`DB_analogresult` folder"
-    ],
-    "Description": [
-        "",
-        "",
-        "",
-        "Includes library annotations for features.",
-        "Includes both library annotations and analog hits for features."
-    ]
-}
-
-# Convert to a pandas DataFrame
-df = pd.DataFrame(data)
-
-# Display the table
-st.write(' ')
-st.write("""
-### For GNPS1 Users: Uploading Data
-While ChemProp2 doesn’t support FBMN jobs from GNPS1 directly, you can manually upload the required files to the app.""")
-st.write("""
-         Once your FBMN job is complete, go to the **Job Status** page and press **Download Cytoscape Data**
-         under **Export/Download Network Files**. 
-         In the downloaded folder, you can find the required files as follows:
-
-         """)
-st.table(df)
-
 
 # Output Files
 st.subheader('Output File Information')
