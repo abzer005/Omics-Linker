@@ -1,1 +1,9 @@
 streamlit
+numpy
+pandas
+plotly
+openpyxl
+scipy  # Required for spearmanr, pearsonr, and distance
+statsmodels
+
+
